@@ -25,12 +25,10 @@ public class Main {
                     System.out.println("Option: No Play. Player stays at position: " + position);
                     break;
 
-                case 1:
-                    position += dice;
-                    if (position > winningPosition) {
-                        position -= dice;
-                        System.out.println("Move exceeds winning position. Stay at position: " + position);
+                case 1:                     if (position + dice > winningPosition) {
+                        System.out.println("Move exceeds 100. Stay at position: " + position);
                     } else {
+                        position += dice;
                         System.out.println("Option: Ladder! Player climbs up to position: " + position);
                     }
                     break;
@@ -38,7 +36,7 @@ public class Main {
                 case 2:
                     position -= dice;
                     if (position < 0) {
-                        position = 0; // Reset to 0 if the position goes below 0
+                        position = 0;
                     }
                     System.out.println("Option: Snake! Player slides down to position: " + position);
                     break;
@@ -47,6 +45,6 @@ public class Main {
             System.out.println("Current position: " + position);
         }
 
-        System.out.println("Congratulations! The player reached the winning position: " + winningPosition);
+        System.out.println("Congratulations! The player reached the exact winning position: " + winningPosition);
     }
 }
