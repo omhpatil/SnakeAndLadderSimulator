@@ -6,16 +6,19 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the Snake and Ladder Game!");
 
-        // Initialize start position and winning position
         int position = 0;
         int winningPosition = 100;
+        int diceRolls = 0;
 
         Random random = new Random();
 
         // Game loop
         while (position < winningPosition) {
+            diceRolls++;
+
+            // Roll the die to get a number between 1 to 6
             int dice = random.nextInt(6) + 1;
-            System.out.println("Rolled the die: " + dice);
+            System.out.println("Dice Roll #" + diceRolls + ": Rolled a " + dice);
 
             // Determine the player's option (0 = No Play, 1 = Ladder, 2 = Snake)
             int option = random.nextInt(3);
@@ -43,9 +46,10 @@ public class Main {
                     break;
             }
 
-            System.out.println("Current position: " + position);
+            System.out.println("Current position after roll: " + position);
         }
 
         System.out.println("Congratulations! The player reached the exact winning position: " + winningPosition);
+        System.out.println("Total dice rolls to win the game: " + diceRolls);
     }
 }
