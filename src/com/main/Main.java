@@ -25,7 +25,8 @@ public class Main {
                     System.out.println("Option: No Play. Player stays at position: " + position);
                     break;
 
-                case 1:                     if (position + dice > winningPosition) {
+                case 1:
+                    if (position + dice > winningPosition) {
                         System.out.println("Move exceeds 100. Stay at position: " + position);
                     } else {
                         position += dice;
